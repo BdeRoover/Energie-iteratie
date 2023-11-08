@@ -9,10 +9,10 @@ col1, col2, col3 = st.columns([2,1,5])
 
 with col1:
     st.header('Input')
-    Eben = st.number_input("Benodigde energie [kNm]")
+    Eben = st.number_input("Benodigde energie [kNm]") or 1
 
-    F = st.number_input("Stootkracht [kN]")
-    U = st.number_input("Vervorming [mm]")
+    F = st.number_input("Stootkracht [kN]") or 1
+    U = st.number_input("Vervorming [mm]") or 1
     Eopt = round( 0.5*F*(U/1000),2)
 
 with col2:
