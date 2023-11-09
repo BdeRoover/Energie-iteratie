@@ -27,8 +27,7 @@ with col3:
         st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {round(U/1000,4)}[m] = :red[{Eopt}] [kNm]")
     else:
          st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {U/1000}[m] = :green[{Eopt}] [kNm]")   
-            
-    # st.write("De veerwaarde bedraagt: ", K, '[kN/m]')
+         st.write('De gekozen stootkracht is juist')
     
     Fs = round(np.sqrt(Eben/Eopt)*F,2)
     
