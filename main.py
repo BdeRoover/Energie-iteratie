@@ -30,10 +30,14 @@ with col3:
             
     # st.write("De veerwaarde bedraagt: ", K, '[kN/m]')
     
+    Fs = round(np.sqrt(Eben/Eopt)*F,2)
+    
     if 1 < f < 1.02:
-        st.write(f"De afwijking bedraagt {Eopt}/{Eben} = :green[{f}] [-]")
+        st.empty()
+        # st.write(f"De afwijking bedraagt {Eopt}/{Eben} = :green[{f}] [-]")
+        
     else:
         st.write(f"De afwijking bedraagt {Eopt}/{Eben} = :red[{f}] [-]")
+        st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}/{Eopt}) x {F} =  :black[{Fs}] [kN]")
     
-    Fs = round(np.sqrt(Eben/Eopt)*F,2)
-    st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}/{Eopt}) x {F} =  :black[{Fs}] [kN]")
+    
