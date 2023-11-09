@@ -31,7 +31,7 @@ with col3:
     
     Fs = round(np.sqrt(Eben/Eopt)*F,2)
     
-    if 1 < f < 1.02:
+    if 1 <= f <= 1.02:
         st.empty()
         st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :green[{f}] [-]")
         st.write('De gekozen stootkracht is juist')        
