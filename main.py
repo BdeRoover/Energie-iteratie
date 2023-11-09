@@ -27,13 +27,13 @@ with col3:
         st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {round(U/1000,4)}[m] = :red[{Eopt}] [kNm]")
     else:
          st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {U/1000}[m] = :green[{Eopt}] [kNm]")   
-         st.write('De gekozen stootkracht is juist')
     
     Fs = round(np.sqrt(Eben/Eopt)*F,2)
     
     if 1 < f < 1.02:
         st.empty()
-        st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :green[{f}] [-]")        
+        st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :green[{f}] [-]")
+        st.write('De gekozen stootkracht is juist')        
     else:
         st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :red[{f}] [-]")
         st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}[kNm]/{Eopt}[kNm]) x {F}[kN] =  :black[{Fs}] [kN]")
