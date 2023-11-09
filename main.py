@@ -2,8 +2,6 @@ import streamlit as st
 from streamlit_extras.app_logo import add_logo 
 import numpy as np
 
-add_logo("\deklerk.jpg")
-
 st.set_page_config(
     page_title="Energieiteratie",
     layout="centered"
