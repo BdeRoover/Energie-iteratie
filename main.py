@@ -6,7 +6,7 @@ st.set_page_config(
     layout="centered"
     )
 
-col1, col2, col3 = st.columns([1,1,2])
+col1, col2, col3 = st.columns([1,1,3])
 
 with col1:    
     st.header('Input')
