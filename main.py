@@ -27,7 +27,7 @@ with col3:
     if Eopt < Eben:
         st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {round(U/1000,4)}[m] = :red[{Eopt}] [kNm]")
     else:
-         st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {U/1000}[m] = :green[{Eopt}] [kNm]")   
+         st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {round(U/1000,4)}[m] = :green[{Eopt}] [kNm]")   
     
     Fs = round(np.sqrt(Eben/Eopt)*F,2)
     
