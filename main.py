@@ -6,13 +6,13 @@ st.set_page_config(
     layout="centered"
     )
 
-col1, col2, col3 = st.columns([1,1,2])
+col1, col2, col3 = st.columns([5,1,20])
 
 with col1:    
     st.header('Input')
-    Eben = st.number_input("Benodigde energie [kNm]", min_value=1.00)    
-    F = st.number_input("Stootkracht [kN]", min_value=10.00)
-    U = st.number_input("Vervorming [mm]", min_value=10.00)
+    Eben = round(st.number_input("Benodigde energie [kNm]", min_value=1.00, step=0.05),2)
+    F = round(st.number_input("Stootkracht [kN]", min_value=10.00, step=0.05),2)
+    U = round(st.number_input("Vervorming [mm]", min_value=10.00, step=0.05),2)
     Eopt = round(0.5*F*(U/1000),2)
 
 with col2:
@@ -24,9 +24,9 @@ with col3:
     f = round(Eopt / Eben,3)
 
     if Eopt < Eben:
-        st.write(f"De optredende energie bedraagt 0.5 x {F} x {U/1000} = :red[{Eopt}] [kNm]")
+        st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {round(U/1000,4)}[m] = :red[{Eopt}] [kNm]")
     else:
-         st.write(f"De optredende energie bedraagt 0.5 x {F} x {U/1000} = :green[{Eopt}] [kNm]")   
+         st.write(f"De optredende energie bedraagt 0.5 x {F}[kN] x {U/1000}[m] = :green[{Eopt}] [kNm]")   
             
     # st.write("De veerwaarde bedraagt: ", K, '[kN/m]')
     
@@ -34,10 +34,9 @@ with col3:
     
     if 1 < f < 1.02:
         st.empty()
-        # st.write(f"De afwijking bedraagt {Eopt}/{Eben} = :green[{f}] [-]")
-        
+        st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :green[{f}] [-]")        
     else:
-        st.write(f"De afwijking bedraagt {Eopt}/{Eben} = :red[{f}] [-]")
-        st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}/{Eopt}) x {F} =  :black[{Fs}] [kN]")
+        st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :red[{f}] [-]")
+        st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}[kNm]/{Eopt}[kNm]) x {F}[kN] =  :black[{Fs}] [kN]")
     
     
