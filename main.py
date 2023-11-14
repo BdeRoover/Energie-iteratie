@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_extras.app_logo import add_logo 
 import numpy as np
-import pyperclip as py
 import os
 
 st.set_page_config(
