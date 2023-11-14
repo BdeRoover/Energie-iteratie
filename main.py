@@ -40,12 +40,12 @@ with col3:
         st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :red[{f}] [-]")
         st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}[kNm]/{Eopt}[kNm]) x {F}[kN] = {Fs} [kN]")
 
-    # def addToClipBoard(text):
-    #     command = 'echo ' + text.strip() + '| clip'
-    #     os.system(command)
+    def addToClipBoard(text):
+        command = 'echo ' + text.strip() + '| clip'
+        os.system(command)
 
-    # copy = addToClipBoard(str(Fs))
+    copy = addToClipBoard(str(Fs))
     
-    copy = py.copy(str(Fs))
+    # copy = py.copy(str(Fs))
     
     st.button('Kopieer stootkracht', on_click=copy)
