@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import os
+import pyperclip as py
 
 st.set_page_config(
     page_title="Energieiteratie",
@@ -39,10 +40,12 @@ with col3:
         st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :red[{f}] [-]")
         st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}[kNm]/{Eopt}[kNm]) x {F}[kN] = {Fs} [kN]")
 
-    def addToClipBoard(text):
-        command = 'echo ' + text.strip() + '| clip'
-        os.system(command)
+    # def addToClipBoard(text):
+    #     command = 'echo ' + text.strip() + '| clip'
+    #     os.system(command)
 
-    copy = addToClipBoard(str(Fs))
+    # copy = addToClipBoard(str(Fs))
+    
+    copy = py.copy(str(Fs))
     
     st.button('Kopieer stootkracht', on_click=copy)
