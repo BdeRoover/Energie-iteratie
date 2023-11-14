@@ -1,13 +1,15 @@
 import streamlit as st
 from streamlit_extras.app_logo import add_logo 
 import numpy as np
+import pyperclip as py
+import os
 
 st.set_page_config(
     page_title="Energieiteratie",
-    layout="centered"
+    layout="wide"
     )
 
-col1, col2, col3 = st.columns([1,1,3])
+col1, col2, col3 = st.columns([1,1,4])
 
 with col1:    
     st.header('Input')
@@ -37,6 +39,12 @@ with col3:
         st.write('De gekozen stootkracht is juist')        
     else:
         st.write(f"De afwijking bedraagt {Eopt}[kNm]/{Eben}[kNm] = :red[{f}] [-]")
-        st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}[kNm]/{Eopt}[kNm]) x {F}[kN] =  :black[{Fs}] [kN]")
+        st.write(f"De nieuwe stootkracht bedraagt \u221A({Eben}[kNm]/{Eopt}[kNm]) x {F}[kN] = {Fs} [kN]")
+
+    def addToClipBoard(text):
+        command = 'echo ' + text.strip() + '| clip'
+        os.system(command)
+
+    copy = addToClipBoard(str(Fs))
     
-    
+    st.button('Kopieer stootkracht', on_click=copy)
